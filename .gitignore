@@ -1,0 +1,8 @@
+# Idris
+build
+**/*.ttc
+**/*.ttm
+*.*~
+
+# Nix
+**/result*

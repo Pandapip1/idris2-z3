@@ -1,0 +1,10 @@
+[custom.all.z3]
+type = "local"
+path = "."
+ipkg = "z3.ipkg"
+test = "test/test.ipkg"
+
+[custom.all.z3-test]
+type = "local"
+path = "test"
+ipkg = "test.ipkg"
