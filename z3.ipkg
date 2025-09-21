@@ -25,11 +25,10 @@ modules =
   Z3.FuncDecl,
   Z3.Model,
   Z3.Solver,
-  Z3.API,
-  Z3.Test
+  Z3.API
 
 -- main file (i.e. file to load at REPL)
-main = Z3.Test
+-- main =
 
 -- name of executable
 -- executable =

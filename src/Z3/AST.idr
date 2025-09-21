@@ -63,14 +63,14 @@ mkEq (MkContext ctx) a b =
 
 ||| Create AND operation
 public export
-mkAnd : Context -> List Z3_ast -> IO Z3_ast
+mkAnd : Context -> Vect n Z3_ast -> IO Z3_ast
 mkAnd (MkContext ctx) asts = do
   arr <- believe_me (the (List AnyPtr) asts)
   primIO $ prim__z3_mk_and ctx (cast (length asts)) arr
 
 ||| Create OR operation
 public export
-mkOr : Context -> List Z3_ast -> IO Z3_ast
+mkOr : Context -> Vect n Z3_ast -> IO Z3_ast
 mkOr (MkContext ctx) asts = do
   arr <- believe_me (the (List AnyPtr) asts)
   primIO $ prim__z3_mk_or ctx (cast (length asts)) arr
