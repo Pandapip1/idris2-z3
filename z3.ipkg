@@ -13,7 +13,9 @@ bugtracker = "https://github.com/Pandapip1/idris2-z3/issues"
 -- langversion
 
 -- packages to add to search path
--- depends =
+depends =
+  base,
+  cptr
 
 -- modules to install
 modules =

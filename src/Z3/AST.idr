@@ -4,6 +4,8 @@ import Z3.Types
 import Z3.Sort
 import Z3.Symbol
 
+import Data.C.Ptr
+
 %default total
 
 %foreign "C:Z3_mk_const,libz3,z3.h"
@@ -63,17 +65,17 @@ mkEq (MkContext ctx) a b =
 
 ||| Create AND operation
 public export
-mkAnd : Context -> Vect n Z3_ast -> IO Z3_ast
+mkAnd : Context -> List Z3_ast -> IO Z3_ast
 mkAnd (MkContext ctx) asts = do
-  arr <- believe_me (the (List AnyPtr) asts)
-  primIO $ prim__z3_mk_and ctx (cast (length asts)) arr
+  arr <- fromList asts
+  primIO $ prim__z3_mk_and ctx (cast (length asts)) (unsafeUnwrap arr)
 
 ||| Create OR operation
 public export
-mkOr : Context -> Vect n Z3_ast -> IO Z3_ast
+mkOr : Context -> List Z3_ast -> IO Z3_ast
 mkOr (MkContext ctx) asts = do
-  arr <- believe_me (the (List AnyPtr) asts)
-  primIO $ prim__z3_mk_or ctx (cast (length asts)) arr
+  arr <- fromList asts
+  primIO $ prim__z3_mk_or ctx (cast (length asts)) (unsafeUnwrap arr)
 
 ||| Create NOT operation
 public export

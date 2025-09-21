@@ -8,3 +8,9 @@ test = "test/test.ipkg"
 type = "local"
 path = "test"
 ipkg = "test.ipkg"
+
+[custom.all.cptr]
+type = "github"
+url = "https://github.com/Pandapip1/idris2-cptr"
+commit = "latest:anyptr-support"
+ipkg = "cptr.ipkg"
