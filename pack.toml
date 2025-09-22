@@ -11,6 +11,6 @@ ipkg = "test.ipkg"
 
 [custom.all.cptr]
 type = "github"
-url = "https://github.com/Pandapip1/idris2-cptr"
-commit = "latest:anyptr-support"
+url = "https://github.com/stefan-hoeck/idris2-cptr"
+commit = "latest:main"
 ipkg = "cptr.ipkg"
